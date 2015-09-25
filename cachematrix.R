@@ -23,7 +23,7 @@ cacheSolve <- function(q, ...) {
         ## Return a matrix that is the inverse of 'q'
   m <- q$getsolve()
   if(!is.null(m)) {
-    if (q==x){
+    if (is.matrix(x) && is.matrix(q) && dim(x) == dim(q) && all(x == q)){
     message("getting cached data")
     return(m)
     }
